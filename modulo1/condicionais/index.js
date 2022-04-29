@@ -98,9 +98,9 @@ else
 
 let informacoes = {
 
-    nomeCompleto: prompt("Qual seu nome completo?").toLowerCase(),
-    tipoDeJogo: prompt ("Digite IN se o jogo for internacional, e DO se for em casa:").toUpperCase(), //se aqui fosse colocado nacional e internacional de opção ficaria melhor nos consoles pq se quisesse trocar depois seria só mudar aqui e não precisaria mudar em cada um
-    etapaDoJogo: prompt ("Digite: SF para SEMI FINAL ----- DT para TERCEIRO LUGAR ----- FI para FINAL:").toUpperCase(),
+    nomeCompleto: prompt("Qual seu nome completo?"),
+    tipoDeJogo: prompt ("Digite IN se o jogo for internacional, e DO se for em casa:").toUpperCase(), //se aqui fosse colocado nacional e internacional
+    etapaDoJogo: prompt ("Digite: SF para SEMI FINAL ----- DT para TERCEIRO LUGAR ----- FI para FINAL:").toUpperCase(), //e se aqui fosse colocado os nomes já diminuira bem também
     categoria: prompt("Qual a categoria: 1, 2, 3 ou 4?"),
     quantidade: Number(prompt("Quantos ingressos são?"))
 }
@@ -110,356 +110,161 @@ let SFValor = [1320, 880, 550, 220];
 let DTValor = [660, 440, 330, 170];
 let FIValor = [1980, 1320, 880, 330];
 
+console.log(`---- DADOS DA COMPRA ----
+Nome do cliente: ${informacoes.nomeCompleto}`) //com as mudanças citadas na linha 102 daria para os consoles ficarem aqui, só faltaria os dos valores
+
 if (((informacoes.tipoDeJogo === "IN") || (informacoes.tipoDeJogo === "DO")) && ((informacoes.etapaDoJogo === "SF" || informacoes.etapaDoJogo === "DT" || informacoes.etapaDoJogo === "FI")) && ((informacoes.categoria === "1" || informacoes.categoria === "2" || informacoes.categoria === "3" || informacoes.categoria === "4")) && (informacoes.quantidade > 0)){
-
-switch (informacoes.categoria)
-{
-    case "1":
-        if (informacoes.etapaDoJogo === "SF") 
+    
+    if (informacoes.tipoDeJogo === "IN") 
+    {
+        console.log (`Tipo de jogo: Internacional`)
+        switch (informacoes.etapaDoJogo)
         {
-            if (informacoes.tipoDeJogo === "DO") 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: ${SFValor[(informacoes.categoria-1)]}
-                    Valor Total: ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            } 
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${SFValor[(informacoes.categoria-1) * dolar]}
-                    Valor Total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
+            case "SF":
+                console.log (`Etapa do jogo: Semi Final
+Categoria: ${informacoes.categoria}
+Quantidade: ${informacoes.quantidade}
+---- VALORES ---
+Valor do ingresso: U$ ${SFValor[informacoes.categoria-1] * dolar}`)
+                switch (informacoes.categoria){
+
+                    case "1":
+                        console.log (`Valor total: U$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    case "2":
+                        console.log (`Valor total: U$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    case "3":
+                        console.log (`Valor total: U$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    default:
+                        console.log (`Valor total: U$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                }
             break
-        } 
-        else if (informacoes.etapaDoJogo === "DT")
-        { 
-            if (informacoes.tipoDeJogo === "DO")
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`);
-        
-            }
-            else
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
-        }
-        else
-        {
-            if (informacoes.etapaDoJogo === "DO")
-            {
-
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            }
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
-        }
-        break;
-
-        case "2":
-        if (informacoes.etapaDoJogo === "SF") 
-        {
-            if (informacoes.tipoDeJogo === "DO") 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: ${SFValor[(informacoes.categoria-1)]}
-                    Valor Total: ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            } 
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${SFValor[(informacoes.categoria-1) * dolar]}
-                    Valor Total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
+            case "DT":
+                console.log (`Etapa do jogo: Terceiro Lugar
+Categoria: ${informacoes.categoria}
+Quantidade: ${informacoes.quantidade}
+---- VALORES ---
+Valor do ingresso: U$ ${DTValor[informacoes.categoria-1] * dolar}`);
+                switch (informacoes.categoria){
+                    
+                    case "1":
+                        console.log (`Valor total: U$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    case "2":
+                        console.log (`Valor total: U$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    case "3":
+                        console.log (`Valor total: U$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    default:
+                        console.log (`Valor total: U$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    
+                }
             break
-        } 
-        else if (informacoes.etapaDoJogo === "DT")
-        { 
-            if (informacoes.tipoDeJogo === "DO")
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`);
-        
-            }
-            else
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
-        }
-        else
-        {
-            if (informacoes.etapaDoJogo === "DO")
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            }
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
-        }
-        break;
-
-        case "3":
-        if (informacoes.etapaDoJogo === "SF") 
-        {
-            if (informacoes.tipoDeJogo === "DO") 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: ${SFValor[(informacoes.categoria-1)]}
-                    Valor Total: ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            } 
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${SFValor[(informacoes.categoria-1) * dolar]}
-                    Valor Total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
+                
+            default:
+                console.log (`Etapa do jogo: Final
+Categoria: ${informacoes.categoria}
+Quantidade: ${informacoes.quantidade}
+---- VALORES ---
+Valor do ingresso: U$ ${FIValor[informacoes.categoria-1] * dolar}`);
+                switch (informacoes.categoria){
+                    case "1":
+                        console.log (`Valor total: U$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    case "2":
+                        console.log (`Valor total: U$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    case "3":
+                        console.log (`Valor total: U$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                    default:
+                        console.log (`Valor total: U$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade *dolar}`)
+                    break
+                }
             break
-        } 
-        else if (informacoes.etapaDoJogo === "DT")
-        { 
-            if (informacoes.tipoDeJogo === "DO")
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`);
-        
-            }
-            else
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
+            
         }
-        else
+    } 
+    else 
+    {
+        console.log (`Tipo de jogo: Nacional`)  
+        switch (informacoes.etapaDoJogo)
         {
-            if (informacoes.etapaDoJogo === "DO")
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            }
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
-        }
-        break;
+            case "SF":
+                console.log (`Etapa do jogo: Semi Final
+Categoria: ${informacoes.categoria}
+Quantidade: ${informacoes.quantidade}
+---- VALORES ---
+Valor do ingresso: R$ ${SFValor[informacoes.categoria-1]}`)
+                switch (informacoes.categoria){
 
-        default:
-        if (informacoes.etapaDoJogo === "SF") 
-        {
-            if (informacoes.tipoDeJogo === "DO") 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: ${SFValor[(informacoes.categoria-1)]}
-                    Valor Total: ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            } 
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Semi Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${SFValor[(informacoes.categoria-1) * dolar]}
-                    Valor Total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
+                    case "1":
+                        console.log (`Valor total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    case "2":
+                        console.log (`Valor total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    case "3":
+                        console.log (`Valor total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    default:
+                        console.log (`Valor total: R$ ${SFValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                }
             break
-        } 
-        else if (informacoes.etapaDoJogo === "DT")
-        { 
-            if (informacoes.tipoDeJogo === "DO")
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`);
-        
-            }
-            else
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Terceiro Lugar
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${DTValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
+            case "DT":
+                console.log (`Etapa do jogo: Terceiro Lugar
+Categoria: ${informacoes.categoria}
+Quantidade: ${informacoes.quantidade}
+---- VALORES ---
+Valor do ingresso: R$ ${DTValor[informacoes.categoria-1]}`);
+                switch (informacoes.categoria){
+                    
+                    case "1":
+                        console.log (`Valor total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    case "2":
+                        console.log (`Valor total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    case "3":
+                        console.log (`Valor total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    default:
+                        console.log (`Valor total: R$ ${DTValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    
+                }
+            break
+                
+            default:
+                console.log (`Etapa do jogo: Final
+Categoria: ${informacoes.categoria}
+Quantidade: ${informacoes.quantidade}
+---- VALORES ---
+Valor do ingresso: R$ ${FIValor[informacoes.categoria-1]}`);
+                switch (informacoes.categoria){
+                    case "1":
+                        console.log (`Valor total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    case "2":
+                        console.log (`Valor total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    case "3":
+                        console.log (`Valor total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                    default:
+                        console.log (`Valor total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`)
+                    break
+                }
+            break
         }
-        else
-        {
-            if (informacoes.etapaDoJogo === "DO")
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Nacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade}`);
-            }
-            else 
-            {
-                console.log (`
-                    Nome do cliente: ${informacoes.nomeCompleto}
-                    Tipo de jogo: Internacional
-                    Etapa do jogo: Final
-                    Categoria: ${informacoes.categoria}
-                    Quantidade: ${informacoes.quantidade}
-                    --- VALORES ---
-                    Valor do Ingresso: R$ ${FIValor[(informacoes.categoria-1)]}
-                    Valor Total: R$ ${FIValor[informacoes.categoria-1] * informacoes.quantidade * dolar}`);
-            }
-        }
-        break;
-
-}
+            
+    }
 }
 else 
 {
