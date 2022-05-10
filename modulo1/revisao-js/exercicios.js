@@ -33,7 +33,9 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+
+    let novoArray = retornaNumerosPares(array);
+    return novoArray.map((item) => item * item)
 }
 
 // EXERCÍCIO 06
