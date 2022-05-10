@@ -155,11 +155,10 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
     return consultas.sort((a,b) => a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0)
 }
-
-   // { nome: "João", dataDaConsulta: "01/10/2021" },
   
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+
+    return consultas.sort((a,b) => a.dataDaConsulta.getTime() - b.dataDaConsulta.getTime() );
 }
