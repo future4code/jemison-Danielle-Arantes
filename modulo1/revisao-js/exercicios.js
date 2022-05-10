@@ -26,8 +26,10 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
-}
+
+    return array.filter((item) => item % 2 === 0)
+} 
+
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
@@ -36,7 +38,7 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+
 }
 
 // EXERCÍCIO 07
