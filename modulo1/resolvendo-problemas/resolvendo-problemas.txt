@@ -1,0 +1,9 @@
+1 passo - ler o enunciado com atenção 
+2 passo - ver as informações que temos e anotar 
+3 passo - entender o que o programa deve receber e o que ele deve retornar
+4 passo - montar um esquema da lógica
+5 passo - criar o primeiro código da maneira que vier na cabeça
+6 passo - testar até dar certo
+7 passo - depois de funcionando pensar se existe uma forma melhor de fazer e nos problemas futuros
+
+Eu particularmente quando o enunciado diz no começo "crie uma array" eu vou lá e crio, depois volto a ler e vou fazendo os passos conforme é pedido, também uso tela dividida pra ter o enunciado inteiro a disposição juntamente com o código que estou fazendo.
