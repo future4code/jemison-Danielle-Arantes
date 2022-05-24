@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,20 +9,20 @@
 </head>
 <body>
     <header>
-        <img src="imagens/logo.jpg" alt="Logomarca com o nome da hamburgueria!"/>
+        <img class="logo" src="imagens/logo.jpg" alt="Logomarca com o nome da hamburgueria!"/>
     </header>
     
     <nav>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
+        <a href="index.html">Página Inicial |</a>
+        <a href="add-produto.html">Adicionar Produto |</a>
+        <a href="historico-venda.html">Historico de Vendas |</a>
+        <a href="pagina-venda.html">Adicionar ao Carrinho</a>
     </nav>
 
-    <h2>Controle de Estoque</h2>
+    <h3>Controle de Estoque</h3>
 
-    <table>
-        <tr>
+    <table class="tabela">
+        <tr id="itens">
             <th>Foto</th>
             <th>Descrição</th>
             <th>Preço (R$)</th>
@@ -30,41 +31,47 @@
 
         <tr>
             <td><img src="imagens/needcheese.jpeg" alt="Sanduiche Artesanal com bastante queijo!"/></td>
-            <td><i> Need For Cheese </i></td>
-            <td><i> 20,00 </i></td>
-            <td><i> 5 unidades </i></td>
+            <td> Need For Cheese </td>
+            <td> 20,00 </td>
+            <td> 5 unidades </td>
         </tr>
 
         <tr>
             <td><img src="imagens/princesalad.jpeg" alt="Sanduiche Artesanal foco na salada!"/></td>
-            <td><i> Prince Of Salad </i></td>
-            <td><i> 16,00 </i></td>
-            <td><i> 12 unidades </i></td>
+            <td> Prince Of Salad </td>
+            <td> 16,00 </td>
+            <td> 12 unidades </td>
         </tr>
 
         <tr>
             <td><img src="imagens/callofbacon.jpeg" alt="Sanduiche Artesanal para os amantes de bacon!"/></td>
-            <td><i> Call Of Bacon </i></td>
-            <td><i> 20,00 </i></td>
-            <td><i> 2 unidades </i></td>
+            <td> Call Of Bacon </td>
+            <td> 20,00 </td>
+            <td> 2 unidades </td>
         </tr>
 
         <tr>
             <td><img src="imagens/godofburger.jpeg" alt="Sanduiche Artesanal com muita muita carne!"/></td>
-            <td><i> God Of Burger </i></td>
-            <td><i> 18,00 </i></td>
-            <td><i> 20 unidades </i></td>
+            <td> God Of Burger </td>
+            <td> 18,00 </td>
+            <td> 20 unidades </td>
         </tr>
 
         <!-- Crie mais uma linha desta tabela abaixo \/ -->
         <tr>
             <td><img src="imagens/danymaycry.jpeg" alt="Sanduiche Artesanal com tudo que possa imaginar!"/></td>
-            <td><i> Dany May Cry </i></td>
-            <td><i> 18,00 </i></td>
-            <td><i> 7 unidades </i></td>
+            <td> Dany May Cry </td>
+            <td> 18,00 </td>
+            <td> 7 unidades </td>
         </tr>
 
     </table>
+
+    <footer>
+        <p>Siga-nos nas redes sociais!</p>
+        <a href="https://instagram.com/god_of_burger7?igshid=YmMyMTA2M2Y=" target="_blank"><img class="icons" src="imagens/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/God-of-Burguer-itba-109988518243171/" target="_blank"><img class="icons" src="imagens/facebook.png" alt="Facebook"></a>
+    </footer>
 
 </body>
 </html>

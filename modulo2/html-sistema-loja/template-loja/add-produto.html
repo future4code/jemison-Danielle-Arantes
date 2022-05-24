@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,18 +9,18 @@
 </head>
 <body>
     <header>
-        <img src="imagens/logo.jpg" alt="Logomarca com o nome da hamburgueria!"/>
+        <img class= "logo" src="imagens/logo.jpg" alt="Logomarca com o nome da hamburgueria!"/>
     </header>
     
     <nav>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
+        <a href="index.html">Página Inicial |</a>
+        <a href="ctrl-estoque.html">Controle de Estoque |</a>
+        <a href="funcionarios.html">Funcionários |</a>
+        <a href="pagina-venda.html">Adicionar ao Carrinho</a>
     </nav>
 
     
-    <h2>Adicionar Produto</h2>
+    <h3>Adicionar Produto</h3>
     <form action="#">
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
@@ -40,9 +41,15 @@
             <br>
 
             <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-            <button type="submit">Adicionar</button>
+            <button class="botao" type="submit">Adicionar</button>
 
     </form>
+
+    <footer>
+        <p>Siga-nos nas redes sociais!</p>
+        <a href="https://instagram.com/god_of_burger7?igshid=YmMyMTA2M2Y=" target="_blank"><img class="icons" src="imagens/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/God-of-Burguer-itba-109988518243171/" target="_blank"><img class="icons" src="imagens/facebook.png" alt="Facebook"></a>
+    </footer>
 
 </body>
 </html>
