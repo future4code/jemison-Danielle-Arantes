@@ -128,3 +128,11 @@ footer{
     text-align: center;
     font-weight: bold;
 }/*alinhamento footer*/
+
+.prints{
+    border: 8px solid black;
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+}/* prints do site*/
