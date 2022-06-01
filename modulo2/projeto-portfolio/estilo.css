@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}/*resentando*/
+
+h1, header, h3{
+    text-align: center;
+    color: white;
+    background-color: black;
+    margin-top: 0px;
+    padding: 10px;
+}/*modificando os nomes das seções*/
+
+h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+}/*modificando fontes*/
+h3{
+    font-family: Arial, sans-serif;
+}
+
+/*MENU*/
+nav{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+nav > a{
+    background-color: rgb(243, 12, 166);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px;
+}/*menu*/
+
+/*seção SOBRE MIM*/
+.imagemtexto{
+    display: flex; /*sem o flex não consegui*/
+    align-items: center;
+    padding-right: 10px;
+}
+.tamanho{
+    height: 200px;
+    width: auto;
+    background-color: rgb(243, 12, 166);
+    border-radius: 100px;
+}/*configuração da foto pixel*/
+.espaco{
+    margin: 10px;
+    text-align: justify;
+    text-indent: 1.5em;
+}/*texto do sobre mim, justificado e com espaçamento*/
+
+/*CURSOS*/
+.emfrente{
+    display: inline;
+}/*nome e curso em frente do outro*/
+
+/*ALINHAMENTOS*/
+span{
+    text-align: center;
+}
+div{
+    text-align: center;
+    display: block;
+}/*alinhamentos no centro*/
+
+/*seção GALERIA PROJETOS*/
+.projeto{
+    width: 35%;
+    height: auto;
+    padding: 20px;
+
+}/* imagens do projeto*/
+
+/*seção HABILIDADES*/
+.habilidade{
+    padding: 10px;
+    font-size: medium;
+}
+#negrito{
+    font-size: large;
+    font-weight: bold;
+}
+#segundotitulo{
+    text-align: center;
+    margin-top: 10px;
+    font-size: x-large;
+    background: grey;
+    color: white;
+}
+
+/*seção CONTATO*/
+form{
+    font-size: 30px;
+    font-weight: bold;
+}
+#caixamaior{
+    height: 100px;
+}/* caixa do texto ficar maior*/
+/*estilização formulario*/
+button{
+    color: white;
+    background-color: rgb(243, 12, 166);
+    background-size: 25px;
+    border-color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: blue;
+}
+button:active{
+    background-color: green;
+}/*estilização do botão*/
+
+
+/*seção REDES SOCIAIS*/
+.icons{
+    width: 50px;
+    height: auto;
+    padding: 15px;
+}/*tamanho icons*/
+footer{
+    text-align: center;
+    font-weight: bold;
+}/*alinhamento footer*/
+
+.prints{
+    border: 8px solid black;
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+}/* prints do site*/
