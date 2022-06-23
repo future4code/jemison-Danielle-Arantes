@@ -25,6 +25,18 @@ function App() {
           texto="Ver mais"
         />
       </div>
+      <div className="page-section-container">
+        <h2>Contato</h2>
+        <CardPequeno
+          imagem={imagememail} 
+          texto="artdanielle@hotmail.com" 
+        /> 
+
+        <CardPequeno
+          imagem={casinha} 
+          texto="Na rua dos bobos, número 0." 
+        />     
+      </div>
 
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
@@ -52,18 +64,6 @@ function App() {
           imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
           texto="Twitter" 
         />        
-      </div>
-      <div className="page-section-container">
-        <h2>Contato</h2>
-        <CardPequeno
-          imagem={imagememail} 
-          texto="artdanielle@hotmail.com" 
-        /> 
-
-        <CardPequeno
-          imagem={casinha} 
-          texto="Na rua dos bobos, número 0." 
-        />     
       </div>
     </div>
   );
