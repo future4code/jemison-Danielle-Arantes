@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  margin: 10vh;
+}
+img{
+  margin-bottom: 2vh;
+}
+#imagem{
+  width: 25%;
+  height: auto;
+}
+button{
+  border-radius: 10%;
+  border-color: purple;
+  font-weight: bold;
+}
+button:hover{
+  background-color: purple;
+}
+@media screen and (max-width: 700px) {
+  h1{
+    font-size: x-large;
+  }
+  #imagem{
+    width: 60%;
+  }
+
+}
+
