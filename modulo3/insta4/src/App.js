@@ -9,10 +9,37 @@ const MainContainer = styled.div`
   align-items: center;
 `
 function App() {
+
+  const lista = [ 
+      {
+        nomeUsuario: 'paulinha',
+        fotoUsuario: 'https://picsum.photos/50/50',
+        fotoPost: 'https://picsum.photos/200/150'
+      },
+      {
+        nomeUsuario: "danielle",
+        fotoUsuario: "https://picsum.photos/20/50",
+        fotoPost: "https://picsum.photos/210/150"
+      },
+      {
+        nomeUsuario: 'victoria',
+        fotoUsuario: 'https://picsum.photos/50/40',
+        fotoPost: 'https://picsum.photos/200/130'
+      }
+    ]
+
+  const postando = lista.map((itens, indice) => {
+    return <Post key={indice}
+      nomeUsuario = {itens.nomeUsuario}
+      fotoUsuario = {itens.fotoUsuario}
+      fotoPost = {itens.fotoPost}
+    />
+  })
+
 return(
   <MainContainer>
-
-    <Post
+      {postando}
+    {/* <Post
       nomeUsuario={'paulinha'}
       fotoUsuario={'https://picsum.photos/50/50'}
       fotoPost={'https://picsum.photos/200/150'}
@@ -28,7 +55,7 @@ return(
       nomeUsuario={'victoria'}
       fotoUsuario={'https://picsum.photos/50/40'}
       fotoPost={'https://picsum.photos/200/130'}
-    />
+    /> */}
 
   </MainContainer>
   
